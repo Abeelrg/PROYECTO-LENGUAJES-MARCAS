@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[💻] PROYECTO FINAL LENGUAJES DE MARCAS [💻]</title>
+
+    <!--
+        Página Web que muestra varias fotos de animales y se ajusta
+        dependiendo de la resolución de los dispositivos.
+        Autor: Abel Riquelme Gómez
+        Version: 1
+        Since: 1
+    -->
+    <style>
+        body{
+            background-color:rgb(7, 189, 1);
+        }
+        #portaFoto {
+         
+            background-color:rgb(7, 189, 1);
+            display: block;
+           
+        }
+    
+        #FotoAnimal {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 1000px;
+        }
+    
+        /*  Con esto conseguimos que el portarretratos no sea mayor que la foto más grande para evitar que se pixele */
+    
+        @media screen and (orientation:landscape) {
+            #portaFoto {
+                max-width: 1200px;
+                max-height: 800px;
+            }
+        }
+    
+        @media screen and (orientation:portrait) {
+            #portaFoto {
+                max-width: 600px;
+                max-height: 900px;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <div id="fotop">
+    <picture id="portaFoto">
+       
+    <!-- LEOPARDO FOTO HORIZONTAL  -->
+        <source media="(orientation: landscape) and (min-width:1201px)" srcset="./leopardo-horizontal1920/leopardo1920.heic" type="image/heic">
+        <source media="(orientation: landscape) and (min-width:1201px)" srcset="./leopardo-horizontal1920/leopardo1920.webp" type="image/webp">
+        <source media="(orientation: landscape) and (min-width:1201px)" srcset="./leopardo-horizontal1920/leopardo1920.jpg" type="image/jpg">
+    <!-- FLAMENCO FOTO VERTICAL  -->
+        <source media="(orientation: portrait) and (min-width: 801px)" srcset="./flamenco-vertical1200/flamenco1200.heic" type="image/heic">
+        <source media="(orientation: portrait) and (min-width: 801px)" srcset="./flamenco-vertical1200/flamenco1200.webp" type="image/webp">
+        <source media="(orientation: portrait) and (min-width: 801px)" srcset="./flamenco-vertical1200/flamenco1200.jpg" type="image/jpg">
+        
+    <!-- TIGRE FOTO HORIZONTAL  -->
+        <source media="(orientation: landscape) and (min-width: 601px)" srcset="./tigre-horizontal800/tigre800.heic" type="image/heic">
+        <source media="(orientation: landscape) and (min-width: 601px)" srcset="./tigre-horizontal800/tigre800.webp" type="image/webp">
+        <source media="(orientation: landscape) and (min-width: 601px)" srcset="./tigre-horizontal800/tigre800.jpg" type="image/jpg">
+
+    <!-- CABALLO FOTO VERTICAL  -->
+        <source media="(orientation: portrait) and (min-width:401px)" srcset="./caballo-vertical600/caballo600.heic" type="image/heic">
+        <source media="(orientation: portrait) and (min-width:401px)" srcset="./caballo-vertical600/caballo600.webp" type="image/webp">
+        <source media="(orientation: portrait) and (min-width:401px)" srcset="./caballo-vertical600/caballo600.jpg" type="image/jpg">
+        
+        <img id="FotoAnimal" alt="Animales" title="Animales" src="./FotosOriginales/caballo-original.jpg" />
+</picture>
+</body>
+
+
+
+
+</html>
